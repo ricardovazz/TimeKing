@@ -1,0 +1,33 @@
+
+GET {{urlUser}}/all HTTP/1.1
+
+###
+
+GET {{urlUser}}/1 HTTP/1.1
+
+###
+
+POST {{urlUser}}/add HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Test 2",
+  "role": "USER",
+  "email": "Test2@gmail.com",
+  "salary": 2
+}
+
+###
+
+PUT {{urlUser}}/1 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Test",
+  "role": "USER",
+  "email": "Test@gmail.com",
+  "salary": 1
+}
+
+###
+DELETE {{urlUser}}/10 HTTP/1.1

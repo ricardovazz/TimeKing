@@ -1,0 +1,32 @@
+
+GET {{urlProject}}/all HTTP/1.1
+
+###
+
+GET {{urlProject}}/1 HTTP/1.1
+
+###
+
+POST {{urlProject}}/add HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "NewProject",
+    "projectDescription": "hello world",
+    "priority": "LOW"
+}
+
+###
+
+PUT {{urlProject}}/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "name": "NEW NAME",
+    "projectDescription": "newwwwwww",
+    "priority": "MEDIUM"
+}
+
+###
+DELETE {{urlProject}}/11 HTTP/1.1

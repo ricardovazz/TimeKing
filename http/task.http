@@ -1,0 +1,35 @@
+
+GET {{urlTask}}/all HTTP/1.1
+
+###
+
+GET {{urlTask}}/33 HTTP/1.1
+
+###
+
+POST {{urlTask}}/add/28 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "NewProject2",
+  "description": "hello world",
+  "status": "AVAILABLE",
+  "totalHours": 1,
+  "notes": ""
+}
+
+###
+
+PUT {{urlTask}}/37 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "NewTaskEdited",
+  "description": "hello world",
+  "status": "AVAILABLE",
+  "totalHours": 0,
+  "notes": "aaaaa"
+}
+
+###
+DELETE {{urlTask}}/11 HTTP/1.1
