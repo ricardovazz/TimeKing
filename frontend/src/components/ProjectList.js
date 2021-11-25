@@ -18,9 +18,9 @@ class ListViewClass extends React.Component {
         };
     }
 
-    aux(id){
-        userService.getProjectFinishedTasks(id).then(tasksCompleted => this.setState({ tasksCompleted }));   
-    }
+    // aux(id){
+    //     userService.getProjectFinishedTasks(id).then(tasksCompleted => this.setState({ tasksCompleted }));   
+    // }
 
     componentDidMount() {
         userService.getAllProjects().then(projects => this.setState({ projects }));        
@@ -63,15 +63,15 @@ class ListViewClass extends React.Component {
                         {projects &&
                         <tbody>
                         {projects.map(function(d, idx){
-                            let linkEdit = "/editproject/" + (d.id).toString();
-                            let link = "/project/" + (d.id).toString();
-                            let linkTasks = "/projectTasks/" + (d.id).toString() + "/tasks";
+                            console.log(d);
+                            let linkEdit = "/editproject/" + (d.project_id).toString();
+                            let link = "/project/" + (d.project_id).toString();
+                            let linkTasks = "/projectTasks/" + (d.project_id).toString() + "/tasks";
                             console.log("project: " + projects.length)
-                            userService.getProjectFinishedTasks(d.id).then(data => console.log(data));
+                            //userService.getProjectFinishedTasks(d.project_id).then(data => console.log(data));
                             let totalTasks = 7;
                             //userService.getProjectFinishedTasks(d.id).then(tasksCompleted => this.setState({ tasksCompleted }));  
-                            let finishedTasks = 2;
-                            
+                            let finishedTasks = 2;                            
                             let res = finishedTasks*100/totalTasks;
 
                             return (

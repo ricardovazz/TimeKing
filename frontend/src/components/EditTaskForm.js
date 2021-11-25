@@ -31,11 +31,11 @@ class EditTaskFormClass extends React.Component{
         .then(task => this.setState({
             id: task ? task.id: '',
             name: task ? task.name : '', 
-            task_description: task ? task.task_description : '',
+            task_description: task ? task.description : '',
             user_id: task ? task.user_id : '',
-            start_time: task ? task.start_time : '',
-            total_hours: task ? task.total_hours : '',
-            status: task ? task.status_id : '',
+            start_time: task ? task.startTime : '',
+            total_hours: task ? task.totalHours : '',
+            status: task ? task.status : '',
             notes: task ? task.notes : '',
             project_id: task ? task.project_id : '',
         }))

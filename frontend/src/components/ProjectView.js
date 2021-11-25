@@ -8,9 +8,10 @@ import { userService } from '../services/user.service';
 
 export default function ProjectView({project}) {
 
-    let finishedTasks = userService.getProjectFinishedTasks(project.id);
-    let totalTasks = userService.getProjectTotalTasks(project.id);
+    let finishedTasks = 7;//userService.getProjectFinishedTasks(project.id);
+    let totalTasks = 3;//userService.getProjectTotalTasks(project.id);
 
+    console.log(project)
     return (
       <>
         <section id="pro" className="relative pt-96">
@@ -41,7 +42,7 @@ export default function ProjectView({project}) {
                             <div className="flex flex-wrap justify-center">
                                 <div className="w-full lg:w-9/12 px-4 flex flex-col items-center">
                                     <LeadText color="blueGray">
-                                        {project.project_description}
+                                        {project.projectDescription}
                                     </LeadText>
                                     <div className="w-full lg:w-4/12 px-4 lg:order-1">
                                 <div className="flex justify-center py-4 lg:pt-4 pt-8">

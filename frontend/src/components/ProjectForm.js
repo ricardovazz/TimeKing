@@ -56,7 +56,7 @@ class ProjectFormClass extends React.Component{
        
         //Update Project
         
-        if(this.state.id ===undefined){
+    if(this.state.id == undefined){
             event.preventDefault();
 
         const options = {
@@ -66,12 +66,12 @@ class ProjectFormClass extends React.Component{
             'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-            name: this.state.name,
-            project_description: this.state.project_description,
-            priority: this.state.priority
+                name: this.state.name,
+                projectDescription: this.state.project_description,
+                priority: this.state.priority
             })
         }
-
+        console.log(options)
         userService.createProject(options).then(res => console.log(res));
     }else{
         const options = {
@@ -84,13 +84,12 @@ class ProjectFormClass extends React.Component{
                 'mode': 'no-cors'
                 },
             body: JSON.stringify({
-                id: this.state.id,
                 name: this.state.name,
-                project_description: this.state.project_description,
+                projectDescription: this.state.project_description,
                 priority: this.state.priority
             })
-   }
-        
+        }
+        console.log("jklljkjklkjl");    
         userService.updateProject(options,this.state.id).then(res => res.JSON());
         
         
@@ -138,7 +137,7 @@ class ProjectFormClass extends React.Component{
                                         <textarea
                                             id="project_description"
                                             name="project_description"
-                                            defaultValue={this.state.project.project_description}
+                                            defaultValue={this.state.project.projectDescription}
                                             onChange={this.handleChange}
                                             rows={3}
                                             required

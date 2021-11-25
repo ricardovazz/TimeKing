@@ -43,12 +43,12 @@ class TaskFormClass extends React.Component{
             body: JSON.stringify({
             name: this.state.name,
             user_id: 1,
-            start_time: null,
-            total_hours: 0,
+            startTime: '',
+            totalHours: 0,
             status_id: 1,
             project_id: this.state.project_id,
-            note: '',
-            task_description: this.state.task_description,
+            notes: '',
+            description: this.state.task_description,
             })
         }
 

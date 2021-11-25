@@ -45,12 +45,12 @@ function getById(id) {
 
 function getAllProjects(){
     const requestOptions = { method: 'GET', headers: authHeader() };
-    return fetch(`http://localhost:8080/api/project`, requestOptions).then(handleResponse);
+    return fetch(`http://localhost:8080/project/all`, requestOptions).then(handleResponse);
 }
 
 function getAllUsers(){
     const requestOptions = { method: 'GET', headers: authHeader() };
-    return fetch(`http://localhost:8080/api/user`, requestOptions).then(handleResponse);
+    return fetch(`http://localhost:8080/user/all`, requestOptions).then(handleResponse);
 }
 
 function getAllRoles(){
@@ -61,66 +61,66 @@ function getAllRoles(){
 
 function getProject(id){
     const requestOptions = { method: 'GET', headers: authHeader() };
-    return fetch(`http://localhost:8080/api/project/${id}`, requestOptions).then(handleResponse);
+    return fetch(`http://localhost:8080/project/${id}`, requestOptions).then(handleResponse);
 }
 
 function updateProject(options,id){
     const requestOptions = options
     requestOptions.Authorization = authHeader().Authorization
-    return fetch(`http://localhost:8080/api/project/update/${id}`, requestOptions).then(handleResponse);
+    return fetch(`http://localhost:8080/project/${id}`, requestOptions).then(handleResponse);
 }
 
 function updateUser(options,id){
     const requestOptions = options
     requestOptions.Authorization = authHeader().Authorization
-    return fetch(`http://localhost:8080/api/user/${id}`, requestOptions).then(handleResponse);
+    return fetch(`http://localhost:8080/user/${id}`, requestOptions).then(handleResponse);
 }
 
 function updateTask(options,id){
     const requestOptions = options
     requestOptions.Authorization = authHeader().Authorization
-    return fetch(`http://localhost:8080/api/task/${id}`, requestOptions).then(handleResponse);
+    return fetch(`http://localhost:8080/task/${id}`, requestOptions).then(handleResponse);
 }
 
 function getUser(id){
     const requestOptions = { method: 'GET', headers: authHeader() };
-    return fetch(`http://localhost:8080/api/user/${id}`, requestOptions).then(handleResponse);
+    return fetch(`http://localhost:8080/user/${id}`, requestOptions).then(handleResponse);
 }
 
 //TODO
 function getTask(id){
     const requestOptions = { method: 'GET', headers: authHeader() };
-    return fetch(`http://localhost:8080/api/task/${id}`, requestOptions).then(handleResponse);
+    return fetch(`http://localhost:8080/task/${id}`, requestOptions).then(handleResponse);
 }
 
 function createUser(options){
     const requestOptions = options
     requestOptions.Authorization = authHeader().Authorization
-    return fetch(`http://localhost:8080/api/user/`, requestOptions).then(handleResponse);
+    return fetch(`http://localhost:8080/user/add`, requestOptions).then(handleResponse);
 }
 
 function createProject(options){
     const requestOptions = options
     requestOptions.Authorization = authHeader().Authorization
-    return fetch(`http://localhost:8080/api/project/`, requestOptions).then(handleResponse);
+    return fetch(`http://localhost:8080/project/add`, requestOptions).then(handleResponse);
 }
 
 //TODO
 function createTask(options){
     const requestOptions = options
     requestOptions.Authorization = authHeader().Authorization
-    return fetch(`http://localhost:8080/api/task/`, requestOptions).then(handleResponse);
+    return fetch(`http://localhost:8080/task/add/id`, requestOptions).then(handleResponse);
 }
 
 function getUserTasks(id){
     const requestOptions = { method: 'GET', headers: authHeader() };
-    return fetch(`http://localhost:8080/api/task/user/${id}`, requestOptions).then(handleResponse);
+    return fetch(`http://localhost:8080/task/user/${id}`, requestOptions).then(handleResponse);
 }
 
 //TODO
 function getProjectTasks(id){
     const requestOptions = { method: 'GET', headers: authHeader() };
-    return fetch(`http://localhost:8080/api/task/project/${id}`, requestOptions).then(handleResponse);
+    return fetch(`http://localhost:8080/task/project/${id}`, requestOptions).then(handleResponse);
 }
 
 //TODO
@@ -134,6 +134,6 @@ function getProjectTotalTasks(id){
 //TODO
 function getProjectFinishedTasks(id){
     const requestOptions = { method: 'GET', headers: authHeader() };
-    let numberOfTask = fetch(`http://localhost:8080/api/project/completedtasks/${id}`, requestOptions).then(handleResponse);
+    let numberOfTask = fetch(`http://localhost:8080/project/completedtasks/${id}`, requestOptions).then(handleResponse);
     return numberOfTask;
 }
